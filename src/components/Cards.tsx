@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CheckBox from '@react-native-community/checkbox';
 import { Task, User } from '../types/types';
@@ -45,7 +45,7 @@ const Cards = ({ item, user, navigation } : Props) => {
   }
 
   return (
-    <View style={{ width: '100%', height: 60, backgroundColor: 'white', marginVertical: 5, borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', paddingHorizontal: 10 }}>
+    <View style={styles.container}>
     <View style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }}>
       <CheckBox
         value={checked}
@@ -64,5 +64,27 @@ const Cards = ({ item, user, navigation } : Props) => {
   </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container:{ 
+    width: '100%', 
+    height: 60, 
+    backgroundColor: 'white', 
+    marginVertical: 5, 
+    borderRadius: 10, 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'space-around', 
+    paddingHorizontal: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 6,
+  }
+});
 
 export default Cards;
